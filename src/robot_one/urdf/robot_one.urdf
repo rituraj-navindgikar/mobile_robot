@@ -1,0 +1,103 @@
+<?xml version="1.0" ?>
+<robot name="robot_one">
+    <link name="world"/>
+        
+	<joint name="world_to_base" type="fixed">
+		<parent link="world"/>
+		<child link="base_link"/>
+    	<origin rpy="0 0 0" xyz="2 3 0"/>
+  	</joint>
+  	<link name="base_link">
+    	<visual>
+    	<origin rpy="0 0 0" xyz="0 0 0"/>
+      	<geometry>
+        	<box size="1.5 1 0.2"/>
+      	</geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="wheel_1_base_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_1_link"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.5 0.6 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="wheel_1_link">
+    <visual>
+      <origin rpy="1.571 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.15"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.12 0.15 0.15"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_2_base_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_2_link"/>
+    <origin rpy="0 0 0" xyz="0.5 -0.6 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="wheel_2_link">
+    <visual>
+      <origin rpy="1.571 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.15"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.15 0.15 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_3_base_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_3_link"/>
+    <origin rpy="0 0 0" xyz="-0.5 -0.6 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="wheel_3_link">
+    <visual>
+      <origin rpy="1.571 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.15"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.15 0.15 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_4_base_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_4_link"/>
+    <origin rpy="0 0 0" xyz="-0.5 0.6 0"/>
+  </joint>
+  <link name="wheel_4_link">
+    <visual>
+      <origin rpy="1.571 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.1" radius="0.15"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.15 0.15 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

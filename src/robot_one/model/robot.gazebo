@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot>
+
+    <gazebo reference="body_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Red</material>
+    </gazebo>
+
+    <gazebo reference="wheel_1_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <gazebo reference="wheel_2_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <gazebo reference="wheel_3_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+    <gazebo reference="wheel_4_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+
+<!-- controller for 4 wheel robot -->
+    <gazebo>
+        <plugin name='skid_steer_drive' filename='libgazebo_ros_diff_drive.so'>
+            <ros> 
+                <namespace> </namespace>
+            </ros>
+
+            <num_wheel_pairs>2</num_wheel_pairs>
+
+            <!-- wheel s0 -->
+            <left_joint>wheel_4_joint</left_joint>
+            <right_joint>wheel_3_joint</right_joint>
+
+
+            <!-- wheel s1 -->
+            <left_joint>wheel_2_joint</left_joint>
+            <right_joint>wheel_1_joint</right_joint>
+
+            <!-- kinematics -->
+            <wheel_separation>${base_y + wheel_length}</wheel_separation>
+            <wheel_separation>${base_y + wheel_length}</wheel_separation>
+
+            <wheel_diameter>${wheel_radius}</wheel_diameter>
+            <wheel_diameter>${wheel_radius}</wheel_diameter>
+
+            <!-- limits -->
+            <max_wheel_torque>1000</max_wheel_torque>
+            <max_wheel_acceleration>5.0</max_wheel_acceleration>
+
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>dummy</robot_base_frame>
+        </plugin>
+    </gazebo>
+</robot>

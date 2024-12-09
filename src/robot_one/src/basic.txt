@@ -1,0 +1,108 @@
+
+
+ <joint name="wheel_1_joint" type="continuous">
+        <origin xyz="${-base_x / 2 + 1.2 * wheel_radius} ${-base_y / 2 - wheel_length / 2} ${wheel_location}" rpy="0.0 0.0 0.0"/>
+        <parent link="body_link"/>
+        <child link="wheel_1_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit effort="1000.0" velocity="1000.0"/>
+        <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+    <link name="wheel_1_link">
+        <visual>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_wheel/>
+    </link>
+
+    <!-- wheel 2  -->
+    <joint name="wheel_2_joint" type="continuous">
+        <origin xyz="${-base_x / 2 + 1.2 * wheel_radius} ${base_y / 2 - wheel_length / 2} ${wheel_location}" rpy="0.0 0.0 0.0"/>
+        <parent link="body_link"/>
+        <child link="wheel_2_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit effort="1000.0" velocity="1000.0"/>
+        <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+    <link name="wheel_2_link">
+        <visual>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_wheel/>
+    </link>
+
+    <!-- wheel 3  -->
+    <joint name="wheel_3_joint" type="continuous">
+        <origin xyz="${base_x / 2 - 1.2 * wheel_radius} ${-base_y / 2 - wheel_length / 2} ${wheel_location}" rpy="0.0 0.0 0.0"/>
+        <parent link="body_link"/>
+        <child link="wheel_3_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit effort="1000.0" velocity="1000.0"/>
+        <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+    <link name="wheel_3_link">
+        <visual>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_wheel/>
+    </link>
+
+    <!-- wheel 4  -->
+    <joint name="wheel_4_joint" type="continuous">
+        <origin xyz="${base_x / 2 - 1.2 * wheel_radius} ${-base_y / 2 + wheel_length / 2} ${wheel_location}" rpy="0.0 0.0 0.0"/>
+        <parent link="body_link"/>
+        <child link="wheel_4_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit effort="1000.0" velocity="1000.0"/>
+        <dynamics damping="1.0" friction="1.0"/>
+    </joint>
+
+    <link name="wheel_4_link">
+        <visual>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+        <collision>
+            <origin xyz="${pi/2} 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="${wheel_radius}" length="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_wheel/>
+    </link>
