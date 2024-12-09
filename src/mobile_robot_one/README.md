@@ -29,7 +29,7 @@ This project demonstrates a mobile robot simulation in **Gazebo** integrated wit
    - Launches the Gazebo simulation environment with the robot and spawns the robot in the world.  
    - Command:  
      ```bash
-     ros2 launch mobile_robot_one gazebo_sim.launch.py
+     ros2 launch mobile_robot_one gazebo_sim.launch.py world:=src/mobile_robot_one/worlds/building_room.world
      ```
 
 2. **`rsp.launch.py`**  
@@ -61,10 +61,17 @@ This project demonstrates a mobile robot simulation in **Gazebo** integrated wit
    - Custom world environment for robot simulation in Gazebo.
 
 ---
+You can run teleoperations to control the bot with keyboard
+- Command:  
+     ```bash
+     ros2 run teleop_twist_keyboard teleop_twist_keyboard 
+     ```
+### Dependencies
+- ROS 2 (Humble)
+- Gazebo
+- slam_toolbox
+- Rviz2
 
-## **How to Run**
-
-### 1. **Setup Environment**
-Ensure all dependencies are installed. Install required packages using:
-```bash
-pip install -r requirements.txt
+  
+Developed By
+Rituraj Navindgikar
